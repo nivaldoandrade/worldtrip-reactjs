@@ -1,34 +1,169 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center"><img src="./public/logo.svg" alt="Worldtrip"/></p>
 
-## Getting Started
 
-First, run the development server:
+<p align="center"><a href="https://www.youtube.com/watch?v=zqc6MsjHU5c" target="_blank"><img src="https://img.youtube.com/vi/zqc6MsjHU5c/0.jpg"/></a></p>
 
-```bash
-npm run dev
-# or
-yarn dev
+
+Uma aplicação que mostra um pouquinho sobre alguns continentes e suas características. Foi utilizado Chakra Ui para a criação da interface e Prismic CMS para criação do conteúdo.
+
+
+## **Configurações Iniciais**
+
+```
+  # clonar o repositório
+  git clone https://github.com/nivaldoandrade/worldtrip-reactjs
+
+  # Instalar as dependências dentro da pasta clonada
+  yarn
+
+  # Iniciar a aplicação
+  yarn dev
+
+```
+## **Configurações do Prismic**
+1. Criar um repositório na [dashboard;](https://prismic.io/dashboard)   
+2. Criar um **Custom Types** do tipo **Repeatable Type** com o nome **continent** com a **build mode**:
+```
+{
+  "Main" : {
+    "uid" : {
+      "type" : "UID",
+      "config" : {
+        "label" : "uuid",
+        "placeholder" : "uuid"
+      }
+    },
+    "name" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "name",
+        "placeholder" : "name"
+      }
+    },
+    "description" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "description",
+        "placeholder" : "description"
+      }
+    },
+    "bannerslider" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : {
+          "width" : 1372,
+          "height" : 450
+        },
+        "thumbnails" : [ ],
+        "label" : "bannerSlider"
+      }
+    },
+    "continentpagebanner" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : {
+          "height" : 500
+        },
+        "thumbnails" : [ ],
+        "label" : "continentPageBanner"
+      }
+    },
+    "content" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "content",
+        "placeholder" : "content"
+      }
+    },
+    "countries" : {
+      "type" : "Number",
+      "config" : {
+        "label" : "countries",
+        "placeholder" : "countries"
+      }
+    },
+    "languages" : {
+      "type" : "Number",
+      "config" : {
+        "label" : "languages",
+        "placeholder" : "languages"
+      }
+    },
+    "cities" : {
+      "type" : "Number",
+      "config" : {
+        "label" : "cities",
+        "placeholder" : "cities"
+      }
+    },
+    "citiescontent" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "cityimage" : {
+            "type" : "Image",
+            "config" : {
+              "constraint" : {
+                "width" : 254,
+                "height" : 173
+              },
+              "thumbnails" : [ ],
+              "label" : "cityImage"
+            }
+          },
+          "countryimage" : {
+            "type" : "Image",
+            "config" : {
+              "constraint" : {
+                "width" : 30,
+                "height" : 30
+              },
+              "thumbnails" : [ ],
+              "label" : "countryImage"
+            }
+          },
+          "cityname" : {
+            "type" : "Text",
+            "config" : {
+              "label" : "cityName",
+              "placeholder" : "cityName"
+            }
+          },
+          "countryname" : {
+            "type" : "Text",
+            "config" : {
+              "label" : "countryName",
+              "placeholder" : "countryName"
+            }
+          }
+        },
+        "label" : "citiesContent"
+      }
+    }
+  }
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## **Configurações .ENV da aplicação**
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### **Primsic**
+```
+#Prismic
+PRISMIC_API_ENDPOINT=
+```
+**Prismic API Endpoint e Gerar token:** [API & Security.](https://spacetraveling-7.prismic.io/settings/apps/)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Tecnologias
 
-## Learn More
+- ReactJS;
+- Next.js;
+- Typescript;
+- Prismic;
+- Chakra UI;
+- React icons;
+- Swiper.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Um pequeno aprendiz nesse grande mundo da programação.** 😃🗺
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
